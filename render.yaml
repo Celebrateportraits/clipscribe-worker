@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: clipscribe-worker
+    runtime: docker
+    plan: starter
+    region: oregon
+    healthCheckPath: /health
+    envVars:
+      - key: PORT
+        value: 8080
+      - key: GROQ_API_KEY
+        sync: false
+      - key: SHARED_SECRET
+        sync: false
